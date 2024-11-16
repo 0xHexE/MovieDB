@@ -1,0 +1,64 @@
+services:
+  manticore:
+    container_name: manticore
+    image: manticoresearch/manticore:6.3.6
+    environment:
+      - EXTRA=1
+    restart: always
+    ports:
+      - "${MANTICORE_SQL_PORT:-9306}:9306"
+      - "${MANTICORE_HTTP_PORT:-9308}:9308"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data:/var/lib/manticore
+    networks:
+      - search_network
+
+  postgres:
+    image: postgres:alpine
+    ports:
+      - "${POSTGRES_PORT:-15432}:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-app_strong_pass#}
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - search_network
+
+  logstash:
+    image: ghcr.io/0xhexe/logstash-postgres/logstash-postgres:8.16.0-pg42.7.4
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+    environment:
+      LS_JAVA_OPTS: "${LS_JAVA_OPTS:--Xmx256m -Xms256m}"
+      POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-app_strong_pass#}
+      MANTICORE_HOST: ${MANTICORE_HOST:-manticore}
+      MANTICORE_HTTP_PORT: ${MANTICORE_HTTP_PORT:-9308}
+      SYNC_INTERVAL: ${SYNC_INTERVAL:-*/5 * * * *}
+    depends_on:
+      - postgres
+      - manticore
+    networks:
+      - search_network
+
+networks:
+  search_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  data:

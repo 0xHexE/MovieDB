@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.Domain", "MovieDB.Domain\MovieDB.Domain.csproj", "{0878A277-547B-4787-93D0-36C45ADEB695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.Infrastructure", "MovieDB.Infrastructure\MovieDB.Infrastructure.csproj", "{6184D462-EF3C-4F05-8AB2-C29D0D095078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.Api", "MovieDB.Api\MovieDB.Api.csproj", "{4BFC4E0A-7973-4701-869E-473827EBFB5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0878A277-547B-4787-93D0-36C45ADEB695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0878A277-547B-4787-93D0-36C45ADEB695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0878A277-547B-4787-93D0-36C45ADEB695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0878A277-547B-4787-93D0-36C45ADEB695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6184D462-EF3C-4F05-8AB2-C29D0D095078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6184D462-EF3C-4F05-8AB2-C29D0D095078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6184D462-EF3C-4F05-8AB2-C29D0D095078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6184D462-EF3C-4F05-8AB2-C29D0D095078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BFC4E0A-7973-4701-869E-473827EBFB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BFC4E0A-7973-4701-869E-473827EBFB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BFC4E0A-7973-4701-869E-473827EBFB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BFC4E0A-7973-4701-869E-473827EBFB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
