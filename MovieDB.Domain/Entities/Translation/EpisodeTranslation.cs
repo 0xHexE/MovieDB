@@ -9,4 +9,6 @@ public class EpisodeTranslation : BaseEntity
     public string LanguageCode { get; set; } = default!;
     public string Title { get; set; } = default!;
     public string? Overview { get; set; }
+    public string? Plot { get; set; }
+    public string? Filming { get; set; }
 }

@@ -13,6 +13,8 @@ namespace MovieDB.Domain.Entities
         public int? Runtime { get; set; }
         public string? Thumbnail { get; set; }
         public float? Rating { get; set; }
+        public string? Plot { get; set; }
+        public string? Filming { get; set; }
         public ICollection<CrewMember> Crew { get; set; } = new List<CrewMember>();
         public ICollection<CastMember> Cast { get; set; } = new List<CastMember>();
         public ICollection<ProductionCompany> ProductionCompanies { get; set; } = new List<ProductionCompany>();

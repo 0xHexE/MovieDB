@@ -1,0 +1,4 @@
+- pipeline.id: media_pipeline
+  path.config: "/usr/share/logstash/pipeline/media.conf"
+- pipeline.id: people_pipeline
+  path.config: "/usr/share/logstash/pipeline/people.conf"

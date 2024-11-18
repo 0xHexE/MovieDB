@@ -16,7 +16,6 @@ public class Person : BaseEntity
     public ICollection<CrewMember> CrewRoles { get; set; } = new List<CrewMember>();
     public float? Popularity { get; set; }
     public PersonExternalIds? ExternalIds { get; set; }
-    public ICollection<ReviewedBy> ReviewedBy { get; set; } = new List<ReviewedBy>();
     public ICollection<Like> Likes { get; set; } = new List<Like>();
     public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 }

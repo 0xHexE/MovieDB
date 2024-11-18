@@ -26,7 +26,7 @@ namespace MovieDB.Infrastructure.Data
         public DbSet<PersonExternalIds> PersonExternalIds => Set<PersonExternalIds>();
         public DbSet<ProductionCompany> ProductionCompanies => Set<ProductionCompany>();
         public DbSet<Certification> Certifications => Set<Certification>();
-        public DbSet<ReviewedBy> Reviews => Set<ReviewedBy>();
+        public DbSet<Link> Reviews => Set<Link>();
         public DbSet<Like> Likes => Set<Like>();
         public DbSet<Comment> Comments => Set<Comment>();
 

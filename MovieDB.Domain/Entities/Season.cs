@@ -10,6 +10,8 @@ public class Season : BaseEntity
     public DateTime? AirDate { get; set; }
     public ICollection<Episode> Episodes { get; set; } = new List<Episode>();
     public Media Media { get; set; } = default!;
+    public string? Plot { get; set; }
+    public string? Filming { get; set; }
     public string MediaId { get; set; } = default!;
     public string? Poster { get; set; }
     public ICollection<ProductionCompany> ProductionCompanies { get; set; } = new List<ProductionCompany>();

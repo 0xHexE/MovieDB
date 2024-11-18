@@ -10,4 +10,6 @@ public class MediaTranslation : BaseEntity
     public string Title { get; set; } = default!;
     public string? Description { get; set; }
     public string? Tagline { get; set; }
+    public string? Plot { get; set; }
+    public string? Filming { get; set; }
 }
